@@ -1,0 +1,225 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sofienberggata Guest Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: single readable column, a ticket-like address card up top, then the journey in travel order */
+:root{
+  --bg:#f5f7f8; --surface:#ffffff; --fg:#1b2429; --muted:#5a6870; --line:#dbe2e6;
+  --accent:#1f4e79; --accent-soft:#e3edf6; --signal:#c8102e;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11181c; --surface:#192226; --fg:#e6ecef; --muted:#9aa8b0; --line:#2b373d;
+  --accent:#8dbbe6; --accent-soft:#1c2e3d; --signal:#ff5a6e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11181c; --surface:#192226; --fg:#e6ecef; --muted:#9aa8b0; --line:#2b373d;
+  --accent:#8dbbe6; --accent-soft:#1c2e3d; --signal:#ff5a6e; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:720px;margin:0 auto;padding-block:40px 64px;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,6vw,2.8rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.5rem;font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600}
+header{display:flex;flex-direction:column;gap:10px}
+header .lead{color:var(--muted);max-width:60ch}
+section{display:flex;flex-direction:column;gap:14px}
+.prose{display:flex;flex-direction:column;gap:12px;max-width:65ch}
+
+.ticket{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ticket-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.ticket-cell{padding:18px 20px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.ticket-cell + .ticket-cell{border-left:1px dashed var(--line)}
+@media (max-width:460px){.ticket-cell + .ticket-cell{border-left:0;border-top:1px dashed var(--line)}}
+.big{font-family:var(--display);font-size:1.45rem;font-weight:800;letter-spacing:-.01em}
+.bell{font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.ticket-actions{display:flex;flex-wrap:wrap;gap:10px;padding:14px 20px;background:var(--accent-soft);border-top:1px solid var(--line)}
+.btn{font:600 .95rem var(--body);display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;
+  border:1px solid var(--accent);color:var(--accent);background:transparent;text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn:hover{filter:brightness(1.08)}
+
+.checklist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.checklist li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.checklist li::before{content:"";width:12px;height:12px;margin-top:7px;border:2px solid var(--accent);border-radius:3px}
+
+.route{display:flex;flex-direction:column;gap:0;border-left:3px solid var(--accent);margin-left:6px}
+.stop{position:relative;padding:0 0 28px 26px;display:flex;flex-direction:column;gap:10px}
+.stop:last-child{padding-bottom:0}
+.stop::before{content:"";position:absolute;left:-10px;top:4px;width:17px;height:17px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--accent)}
+.lines{display:flex;gap:6px;flex-wrap:wrap}
+.line{font:800 .85rem var(--display);background:var(--accent);color:var(--bg);border-radius:6px;padding:2px 9px;font-variant-numeric:tabular-nums}
+
+figure{margin:0;display:flex;flex-direction:column;gap:8px}
+figure img{border-radius:10px;border:1px solid var(--line);display:block;width:100%;height:auto}
+figcaption{font-size:.9rem;color:var(--muted)}
+.placeholder{border:2px dashed var(--line);border-radius:10px;padding:28px 20px;text-align:center;color:var(--muted);font-size:.95rem}
+
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.tip{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tip p{color:var(--fg);font-size:.97rem}
+.guide{background:var(--accent-soft);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:12px}
+.walk{display:flex;flex-direction:column;gap:12px;margin-top:6px;padding-top:18px;border-top:1px dashed var(--line)}
+.steps{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:6px}
+.steps li::marker{font-family:var(--display);font-weight:800;color:var(--accent)}
+.warn{border-left:4px solid var(--signal);padding:8px 14px;background:var(--surface);border-radius:0 8px 8px 0}
+.applinks{display:flex;flex-wrap:wrap;gap:8px}
+footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:18px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Guest information · Grünerløkka, Oslo</span>
+    <h1>Welcome to Sofienberggata 3D</h1>
+    <p class="lead">Thanks for booking. Here is everything you need to find the apartment, check in, and enjoy Oslo. Please read it before you travel.</p>
+  </header>
+
+  <div class="ticket" aria-label="Address, doorbell and phone">
+    <div class="ticket-row">
+      <div class="ticket-cell">
+        <span class="eyebrow">Address</span>
+        <span class="big" id="addr">Sofienberggata 3D</span>
+        <span>Ground floor apartment H0101</span>
+        <span style="color:var(--muted)">Grünerløkka, Oslo</span>
+      </div>
+      <div class="ticket-cell">
+        <span class="eyebrow">Ring the bell</span>
+        <span class="big bell">H0101</span>
+      </div>
+      <div class="ticket-cell">
+        <span class="eyebrow">Call or text Roy</span>
+        <span class="big bell" id="phone">+47 908 36 399</span>
+      </div>
+    </div>
+    <div class="ticket-actions">
+      <a class="btn primary" href="https://goo.gl/maps/Z3FdEKBmWPXECqFu9" target="_blank" rel="noopener">Open in Google Maps</a>
+      <button class="btn" id="copyAddr" type="button">Copy address</button>
+      <button class="btn" id="copyPhone" type="button">Copy phone number</button>
+    </div>
+  </div>
+
+  <section>
+    <h2>Before you arrive</h2>
+    <p class="prose">We will normally be there to meet you. If the keys need to be handed over another way, we agree on that case by case. Please send us a message on Airbnb with:</p>
+    <ul class="checklist">
+      <li>The time you expect to arrive.</li>
+      <li>If you are two people sharing a bed, whether you are friends or a couple, so we can set up the beds the best way.</li>
+      <li>The best way to keep in touch with you, if not through Airbnb.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Getting here</h2>
+    <figure>
+      <img src="overview_annotated.png" alt="Overview map of central Oslo. The apartment is in Grünerløkka, north of the city centre. Oslo Central Station (Oslo S) is at the south end of the centre, by the harbour." width="962" height="626">
+      <figcaption>The apartment is in Grünerløkka, about 20 minutes on foot or 4 minutes by tram from Oslo Central Station.</figcaption>
+    </figure>
+    <div class="route">
+      <div class="stop">
+        <h3>1. Into the city centre</h3>
+        <p>Most guests arrive at Oslo Central Station (Oslo S) or the bus terminal next to it. See the airport tips below if you are flying in.</p>
+      </div>
+
+      <div class="stop">
+        <h3>2. Tram from Oslo S</h3>
+        <div class="lines" aria-label="Tram lines"><span class="line">12</span><span class="line">15</span><span class="line">18</span></div>
+        <p>In front of the Central Station, take tram 12, 15 or 18 to the stop <strong>Schous plass</strong> or <strong>Olaf Ryes plass</strong>, and walk 2 minutes from there. When you come out of the main entrance, the trams go from left to right. The ride is 3 stops and about 4 minutes.</p>
+        <p>Buy your ticket in the <strong>Ruter</strong> app before you board. If you came on the local train from the airport, your train ticket is already valid on the tram.</p>
+        <div class="applinks"><a class="btn" href="https://apps.apple.com/app/ruter/id993620197" target="_blank" rel="noopener">Ruter app for iPhone</a><a class="btn" href="https://play.google.com/store/apps/details?id=no.ruter.reise" target="_blank" rel="noopener">Ruter app for Android</a></div>
+        <figure>
+          <img src="map_annotated.png" alt="Aerial map of Jernbanetorget outside Oslo S. Tram 18 stops at the top, by Jernbanetorget towards Fred. Olsens gate. Trams 12 and 15 stop at the bottom, right outside the station square." width="1038" height="612">
+          <figcaption>Tram 18 leaves from the stop on the upper side of Jernbanetorget. Trams 12 and 15 leave from the stop right outside the station square.</figcaption>
+        </figure>
+      </div>
+
+      <div class="stop">
+        <h3>3. From the tram stop to the door</h3>
+        <p>From either tram stop it is a short walk. The red lines on the map show both routes.</p>
+        <figure>
+          <img src="walk_annotated.png" alt="Map of Grünerløkka. From the tram stop at Olaf Ryes plass the route crosses the square to Sofienberggata, passes Cafe di Roma on the corner of Markveien and continues to the apartment. From the tram stop at Schous plass the route follows Nordre gate west and turns north to the apartment." width="810" height="620">
+          <figcaption>Get off at Olaf Ryes plass or Schous plass and follow the red line to the apartment.</figcaption>
+        </figure>
+        <div class="prose">
+          <p><strong>From Olaf Ryes plass:</strong> walk diagonally across the square to Sofienberggata and continue to the apartment. On the way you pass <strong>Cafe di Roma</strong>, marked in orange. This is our usual meeting and pickup spot, so we may agree to meet you there.</p>
+          <p><strong>From Schous plass:</strong> walk west along Nordre gate, then turn right up to the apartment.</p>
+        </div>
+        <div><a class="btn" href="https://youtu.be/2aBXpC6T-9g" target="_blank" rel="noopener">Watch the walk from Olaf Ryes plass</a></div>
+      </div>
+    </div>
+    <div class="walk">
+      <h3>Prefer to walk from Oslo S? About 20 minutes</h3>
+      <p>If the weather is good, we recommend walking. Most of the way is pedestrian streets, and the route takes only about 2 minutes longer than the one your GPS suggests, but it is much nicer.</p>
+      <ol class="steps">
+        <li>From Oslo S, walk to <strong>Oslo Cathedral</strong>.</li>
+        <li>Follow <strong>Torggata</strong>, a pedestrian street, all the way from the cathedral to the bridge over the river.</li>
+        <li>Cross the bridge and walk up <strong>Markveien</strong> to <strong>Nordre gate</strong>. From there, follow the local map above for the last part.</li>
+      </ol>
+      <p class="warn"><strong>Do not follow the GPS.</strong> It suggests worse routes than this one.</p>
+      <figure>
+        <img src="walkcity_annotated.png" alt="Map of central Oslo. The walking route goes from Oslo S to Oslo Cathedral, then along Torggata in orange to the bridge, then north along Markveien in red to Nordre gate and the apartment in Grünerløkka." width="878" height="622">
+        <figcaption>Orange: Torggata from the cathedral to the bridge. Red: Markveien up to Nordre gate and the apartment.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Airport tips</h2>
+    <div class="tips">
+      <div class="tip">
+        <span class="eyebrow">Oslo Airport Gardermoen</span>
+        <p>Take the local train run by Vy. The ticket costs about half as much as the airport express, and it is also valid on the city's trams, buses and metro for 2.5 hours. Buy it in the <strong>Ruter</strong> app and get off at <strong>Oslo S</strong>.</p>
+        <div class="applinks"><a class="btn" href="https://apps.apple.com/app/ruter/id993620197" target="_blank" rel="noopener">Ruter app for iPhone</a><a class="btn" href="https://play.google.com/store/apps/details?id=no.ruter.reise" target="_blank" rel="noopener">Ruter app for Android</a></div>
+      </div>
+      <div class="tip">
+        <span class="eyebrow">Sandefjord Airport Torp</span>
+        <p>Take the direct bus to Oslo, or take the shuttle bus from the airport to Torp station and the Vy train from there to Oslo S.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>When you are inside</h2>
+    <p class="prose">On the refrigerator there is a QR code. Scan it for a welcome and instruction video for the apartment.</p>
+  </section>
+
+  <section class="guide">
+    <span class="eyebrow">Our private Oslo guide</span>
+    <h2>Experience Oslo like a local</h2>
+    <div class="prose">
+      <p>This custom Google Maps guide marks the places we recommend, each with a note on why it is worth a visit: restaurants, bars, shops loved by locals, and the main sights.</p>
+      <p>Don't miss Vigeland Park, also called the Sculpture Park. Gustav Vigeland's sculptures fill the whole park, and it is a favourite with locals and visitors alike.</p>
+    </div>
+    <figure>
+      <a href="https://www.google.com/maps/d/u/0/viewer?mid=1y5OdbjdRKbLkNzWLhPgdiTcCxIOVE2y7&amp;ll=59.91375409514471%2C10.747053926543213&amp;z=15" target="_blank" rel="noopener"><img src="oslo-guide.jpg" alt="Screenshot of the Oslo guide in Google Maps. Coloured pins for restaurants, bars, shops and sights cover central Oslo and Grünerløkka. The side panel shows the entry for the sculpture Veslefrikk with the fiddle, with its story in English, French, Spanish and Chinese." width="1422" height="662"></a>
+      <figcaption>A look inside the guide. Tap any pin to read about the place. Many descriptions are in English, French, Spanish and Chinese.</figcaption>
+    </figure>
+    <div><a class="btn primary" href="https://www.google.com/maps/d/u/0/viewer?mid=1y5OdbjdRKbLkNzWLhPgdiTcCxIOVE2y7&amp;ll=59.91375409514471%2C10.747053926543213&amp;z=15" target="_blank" rel="noopener">Open the Oslo guide map</a></div>
+  </section>
+
+  <footer>Questions at any time? Message us on Airbnb or call or text +47 908 36 399. Enjoy your stay!</footer>
+</div>
+
+<script>
+function setupCopy(btnId, textId, text){
+  var b=document.getElementById(btnId), label=b.textContent;
+  b.addEventListener('click', function(){
+    function done(){b.textContent='Copied';setTimeout(function(){b.textContent=label},1800)}
+    function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById(textId));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText(text).then(done,fallback)}catch(e){fallback()}
+  });
+}
+setupCopy('copyAddr','addr','Sofienberggata 3D, ground floor apartment H0101, Oslo');
+setupCopy('copyPhone','phone','+4790836399');
+</script>
+
+</body></html>
